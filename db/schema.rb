@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170223152623) do
+ActiveRecord::Schema.define(version: 20170227152432) do
+
+  create_table "blog_posts", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.datetime "publishdate"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "ispublished"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string   "name",       limit: 191, null: false
