@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get 'players', to: 'players#index'
 
-  get 'home/index'
+  get 'home', to: 'home#index'
 
   # Allow routes such as http://localhost:3000/hello_rails/p/1 to work
   get ':title/p/:id' => "blog_posts#show", :id => /[0-9]+/

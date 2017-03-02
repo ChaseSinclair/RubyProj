@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ul li
+{
+ 	float:left;
+	display:inline;
+	padding-right: 30px;
+}
+
+h1
+{
+	background-image: url(<%= asset_path 'blue_banner.png' %>);
+}

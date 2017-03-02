@@ -1,8 +1,16 @@
-<h1>Players</h1>
+<%= content_for(:title, "Players") %>
+<table>
+<tr>
+  <th>Player Name</th>
+  <th>Position</th>
+  <th>No.</th>
+</tr>
 <% @players.each do |player| %>
-  <p><%= player.name %></p>
-  <p><%= player.position %></p>
-  <p><%= player.number %></p>
+<tr>
+  <td><%= player.name %></td>
+  <td><%= player.position %></td>
+  <td><%= player.number %></td>
+</tr>
 <% end %>
-
+</table>
 

@@ -9,6 +9,20 @@
   </head>
 
   <body>
+  	<header>
+      <div>
+      	<h1><%= yield(:title) %></h1>
+        <nav>
+          <ul>
+            <li><%= link_to "Home",       'home' %></li>
+            <li><%= link_to "Blog Posts", 'blogposts' %></li>
+            <li><%= link_to "Teams",      'teams' %></li>
+            <li><%= link_to "Players",    'players' %></li>
+          </ul>
+        </nav>
+      </div>
+      </br>
+    </header>
     <%= yield %>
   </body>
 </html>
