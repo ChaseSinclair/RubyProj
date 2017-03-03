@@ -1,31 +1,35 @@
+
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1>Game Recaps</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="blogposts/new" role="button">Post New Review</a></p>
+      </div>
+
+      <div class="row marketing">
+        <% @blog_posts.each do |blog_post| %>
+          <div class="col-lg-6">
+            <h4><%= link_to blog_post.title, blog_post %></h4>
+            <p><%= blog_post.content %></p>
+            <p>Published: <%= blog_post.publishdate %></p>
+            <p>
+              <%= link_to 'Edit Post', edit_blog_post_path(blog_post) %>
+              <%= button_to "Delete", blog_post, data: { confirm: 'Are you sure?' },
+                :class => "btn btn-danger btn-sm", :method => :delete %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
 <p id="notice"><%= notice %></p>
 
 <%= content_for(:title, "Blog Posts") %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Publishdate</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blog_posts.each do |blog_post| %>
-      <tr>
-        <td><%= blog_post.title %></td>
-        <td><%= blog_post.content %></td>
-        <td><%= blog_post.publishdate %></td>
-        <td><%= link_to 'Show', blog_post %></td>
-        <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
-        <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog Post', new_blog_post_path %>
