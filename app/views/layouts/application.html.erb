@@ -11,7 +11,7 @@
   <body>
     <header>
         <div class="navbar-wrapper">
-      <div class="container">
+
 
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
@@ -31,7 +31,10 @@
                 <li><a href="teams">Teams</a></li>
                 <li><a href="players">Players</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Dropdown 
+                    <span class="caret"></span>
+                  </a>
                   <ul class="dropdown-menu">
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Another action</a></li>
@@ -47,10 +50,11 @@
           </div>
         </nav>
 
-      </div>
     </div>
     </header>
+    <div class="container">
     <%= yield %>
+    </div>
     <footer>
       <p class="pull-right"><a href="#">Back to top</a></p>
       <p>© 2017 Sinclair, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>

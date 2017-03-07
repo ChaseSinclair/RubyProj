@@ -1,15 +1,17 @@
 <%= content_for(:title, "Teams") %>
-<table>
-<tr>
-  <th>Team Name</th>
-  <th>Conference</th>
-  <th>Rank</th>
-</tr>
-<% @teams.each do |team| %>
-<tr>
-  <td><%= team.name %></td>
-  <td><%= team.conference %></td>
-  <td><%= team.rank %></td>
-</tr>
-<% end %>
-</table>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Teams</div>
+  <table class="table">
+    <thead><tr> <th>Rank</th> <th>Team Name</th> <th>Conference</th> </tr></thead>
+    <tbody>
+      <% @teams.each do |team| %>
+      <tr>
+        <th scope="row"><%= team.rank %></th>
+        <td><%= team.name %></td>
+        <td><%= team.conference %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

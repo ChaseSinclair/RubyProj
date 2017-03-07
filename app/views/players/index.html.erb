@@ -1,16 +1,21 @@
 <%= content_for(:title, "Players") %>
-<table>
-<tr>
-  <th>Player Name</th>
-  <th>Position</th>
-  <th>No.</th>
-</tr>
-<% @players.each do |player| %>
-<tr>
-  <td><%= player.name %></td>
-  <td><%= player.position %></td>
-  <td><%= player.number %></td>
-</tr>
-<% end %>
-</table>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Kansas Roster</div>
+  <table class="table">
+    <thead><tr> <th>#</th> <th>Player Name</th> <th>Position</th> <th>Height</th> <th>Weight</th> <th>Year</th></tr></thead>
+    <tbody>
+      <% @players.each do |player| %>
+      <tr>
+        <th scope="row"><%= player.number %></th>
+        <td><%= player.name %></td>
+        <td><%= player.position %></td>
+        <td><%= player.height %></td>
+        <td><%= player.weight %></td>
+        <td><%= player.year %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 

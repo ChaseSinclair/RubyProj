@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227152432) do
+ActiveRecord::Schema.define(version: 20170307151253) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20170227152432) do
     t.integer  "number",                 null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "height"
+    t.decimal  "weight"
+    t.string   "year"
     t.index ["name"], name: "index_players_on_name"
   end
 
