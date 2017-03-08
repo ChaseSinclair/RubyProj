@@ -8,7 +8,7 @@
       <% @teams.each do |team| %>
       <tr>
         <th scope="row"><%= team.rank %></th>
-        <td><%= team.name %></td>
+        <td><a href="<%= team_path(team.id) %>"><%= team.name %></a></td>
         <td><%= team.conference %></td>
       </tr>
       <% end %>
