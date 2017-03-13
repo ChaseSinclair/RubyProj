@@ -1,0 +1,34 @@
+
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1>Video Game Reviews</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="videogames/new" role="button">Post New Review</a></p>
+      </div>
+
+      <div class="row marketing">
+        <% @video_games.each do |video_game| %>
+          <div class="col-lg-6">
+            <h4><%= link_to video_game.title, video_game %></h4>
+            <p><%= video_game.content %></p>
+            <p>Published: <%= video_game.publishdate %></p>
+            <p>
+              <%= link_to 'Edit Post', edit_video_game_path(video_game) %>
+              <%= button_to "Delete", video_game, data: { confirm: 'Are you sure?' },
+                :class => "btn btn-danger btn-sm", :method => :delete %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+<p id="notice"><%= notice %></p>
+
+<%= content_for(:title, "Video Game Reviews") %>
