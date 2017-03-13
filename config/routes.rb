@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :movies
   # Override the underscored path Ex: http://localhost:3000/blogposts instead of http://localhost:3000/blog_posts
   resources :blog_posts, :path => "blogposts"
 
