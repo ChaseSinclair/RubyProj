@@ -4,9 +4,16 @@
   getDefaultProps: ->
     movies: []
   addMovie: (movie) ->
-    movies = @state.movies.slice()
-    movies.push movie
+    movies = React.addons.update(@state.movies, { $push: [movie] })
     @setState movies: movies
+  deleteMovie: (movie) ->
+    index = @state.movies.indexOf movie
+    movies = React.addons.update(@state.movies, { $splice: [[index, 1]] })
+    @replaceState movies: movies
+  updateMovie: (movie, data) ->
+    index = @state.movies.indexOf movie
+    movies = React.addons.update(@state.movies, { $splice: [[index, 1, data]] })
+    @replaceState movies: movies
   render: ->
     React.DOM.div
       className: 'movies'
@@ -22,6 +29,7 @@
             React.DOM.th null, 'Title'
             React.DOM.th null, 'Content'
             React.DOM.th null, 'Rating'
+            React.DOM.th null, 'Actions'
         React.DOM.tbody null,
           for movie in @state.movies
-            React.createElement Movie, key: movie.id, movie: movie
+            React.createElement Movie, key: movie.id, movie: movie, handleDeleteMovie: @deleteMovie, handleEditMovie: @updateMovie

@@ -7,25 +7,9 @@
         <p><a class="btn btn-lg btn-success" href="movies/new" role="button">Post New Review</a></p>
       </div>
 
-      <div class="row marketing">
-        <% @movies.each do |movie| %>
-          <div class="col-lg-6">
-            <h4><%= link_to movie.title, movie %></h4>
-            <p><%= movie.content %></p>
-            <p>Published: <%= movie.publishdate %></p>
-            <p>
-              <%= link_to 'Edit Post', edit_movie_path(movie) %>
-              <%= button_to "Delete", movie, data: { confirm: 'Are you sure?' },
-                :class => "btn btn-danger btn-sm", :method => :delete %>
-            </p>
-          </div>
-        <% end %>
-      </div>
+      <%= react_component 'Movies', { data: @movies } %>
 
     </div> <!-- /container -->
-
-    <%= react_component 'Movies', { data: @movies } %>
-
 
 <p id="notice"><%= notice %></p>
 
