@@ -6,7 +6,7 @@
       rating: ''
     handleSubmit: (e) ->
       e.preventDefault()
-      $.post '', { movie: @state }, (data) =>
+      $.post 'movies', { movie: @state }, (data) =>
         @props.handleNewMovie data
         @setState @getInitialState()
       , 'JSON'
