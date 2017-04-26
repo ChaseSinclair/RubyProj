@@ -3,8 +3,31 @@
 
       <div class="jumbotron">
         <h1>Movie Reviews</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p class="lead">Here you'll find reviews for all the latest movies I've seen. Over time, my opinions of these movies may change so you may see the ratings fluctuate.</p>
         <p><a class="btn btn-lg btn-success" href="movies/new" role="button">Post New Review</a></p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+          <a class="thumbnail" href="#">
+            <img class="img-responsive" src="https://resizing.flixster.com/yBijkUaAZyvSL8BzwDR50Ab4fYE=/206x305/v1.bTsxMjMwMzk5MjtqOzE3MzMyOzEyMDA7MzYwMDs1NTUw" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+          <a class="thumbnail" href="#">
+            <img class="img-responsive" src="https://resizing.flixster.com/lH7rzKqkYzdZ4JhFInNtNVetgmA=/206x305/v1.bTsxMjI2MTcyNjtqOzE3MzMxOzEyMDA7NjIxOzkyMQ" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+          <a class="thumbnail" href="#">
+            <img class="img-responsive" src="https://resizing.flixster.com/POuQse1wJTE5kT-HsfwT9pIWRbI=/206x305/v1.bTsxMjMyMzE1NjtwOzE3MzMyOzEyMDA7NTkxOzg3Ng" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+          <a class="thumbnail" href="#">
+            <img class="img-responsive" src="https://resizing.flixster.com/IYbhKwXYWq1-xziwFgGpu5gasvM=/206x305/v1.bTsxMjM0NTY3NjtqOzE3MzMyOzEyMDA7NTM5OzgwMA" alt="">
+          </a>
+        </div>
       </div>
 
       <%= react_component 'Movies', { data: @movies } %>
